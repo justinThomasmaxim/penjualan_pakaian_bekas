@@ -1,0 +1,637 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-light: #f0eff5;
+  --color-gray-light: #86848c;
+  --color-gray-dark: #56555e;
+  --color-black: #27282f;
+  --box-shadow-black: rgba(0, 0, 0, 0.1);
+  --box-shadow-white: rgba(255, 255, 255, 0.1);
+
+  --color-gray-light--white: #f0eff5;
+  --color-black--gray-dark: #27282f;
+}
+
+/* dark theme variables */
+.dark-theme {
+  --color-white: #131316;
+  --color-light: #23232a;
+  --color-black: #ddd;
+  --color-gray-light: #56555e;
+  --color-gray-dark: #adacb5;
+  --box-shadow-black: rgba(255, 255, 255, 0.1);
+  --box-shadow-white: rgba(0, 0, 0, 0.1);
+
+  --color-gray-light--white: #ffffff;
+  --color-black--gray-dark: #29292c;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-y: hidden;
+}
+
+a {
+  color: var(--color-black);
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "sidebar main main"
+    "sidebar footer footer";
+
+  grid-template-columns: 30vw 1fr 1fr;
+}
+
+.container.active {
+  transition: all 300ms;
+  grid-template-columns: 67px 1fr 1fr;
+}
+
+/* .sidebar ul .item {
+  background-color: red;
+} */
+
+/* --- NAVBAR --- */
+
+nav {
+  grid-area: navbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+nav .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(86, 29, 186);
+  height: 100%;
+  width: 30vw;
+}
+
+nav .header h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+nav h1 span {
+  font-weight: 600;
+}
+
+nav .nav-right {
+  display: flex;
+  width: 69vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .button-dark-theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  background-color: var(--color-gray-light--white);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+nav .button-dark-theme i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8rem;
+  padding: 3px 10px;
+  background-color: var(--color-gray-light--white);
+}
+
+nav .button-dark-theme i.light {
+  color: white;
+  border-radius: 5px;
+  background-color: var(--color-black--gray-dark);
+}
+
+nav .button-dark-theme i.dark {
+  color: black;
+  border-radius: 5px;
+}
+
+nav .icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 10px;
+}
+
+nav .nav-right .icon a,
+nav .nav-right .button-dark-theme {
+  margin-right: 10px;
+}
+
+nav .icon i {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 1.5rem;
+}
+
+nav .icon i:hover {
+  background-color: var(--color-gray-light);
+  transform: scale(1.1);
+  transition: all 300ms;
+}
+
+nav .profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100px;
+  margin: 0 8px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav .profile:hover {
+  background-color: var(--color-gray-light);
+  transition: all 300ms;
+}
+
+nav .profile img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+}
+
+nav .profile h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+/* --- SIDEBAR --- */
+
+.sidebar {
+  grid-area: sidebar;
+  /* width: 30vw; */
+  height: 90vh;
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: 1px 0px 1px var(--box-shadow-black);
+  transition: transform 300ms;
+  z-index: 10;
+}
+
+.sidebar.active {
+  width: 80px;
+}
+
+.sidebar ul.active .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar ul.active .item li {
+  display: none;
+}
+
+/* .sidebar ul {
+    border: 1px solid blue;
+  } */
+
+.sidebar .item {
+  display: flex;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 8px;
+}
+
+.sidebar .item.active {
+  background-color: var(--color-gray-light);
+}
+
+.sidebar .item:hover {
+  background-color: var(--color-gray-light);
+  transform: scale(1.05);
+  transition: all 300ms;
+}
+
+.sidebar .item i,
+.sidebar .item li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.sidebar .item li {
+  margin-left: 5px;
+}
+
+/* --- MAIN --- */
+
+main {
+  grid-area: main;
+  height: 90vh;
+  background-color: var(--color-light);
+  /* overflow-x: hidden; */
+}
+
+main .header {
+  font-size: 1rem;
+  padding: 5px 10px;
+  color: var(--color-black);
+  gap: 10px;
+}
+
+/* HALAMAN BARANG */
+
+main #page-barang .cards-category {
+  background-color: var(--color-white);
+  height: 60px;
+  margin: 10px;
+  padding: 5px 10px;
+  color: var(--color-black);
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+}
+
+main #page-barang .kategori {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  /* border: 1px solid black; */
+}
+
+main #page-barang .kategori .img p {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--color-black);
+}
+
+main #page-barang .kategori .img p:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+main #page-barang .barang {
+  margin: 10px;
+  height: calc(100vh - 10vh - 60px - 60px);
+  padding: 5px 10px;
+  /* border: 1px solid var(--color-black); */
+  overflow-y: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+main #page-barang .barang .card {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow-black);
+  height: 220px;
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+  border-radius: 10px;
+  /* border: 1px solid black; */
+}
+
+main #page-barang .barang .card .information {
+  padding: 5px 10px;
+  color: var(--color-black);
+}
+
+main #page-barang .barang .card .harga-terjual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main #page-barang .barang .card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  /* border: 1px solid black; */
+}
+
+/* HALAMAN PEMBELIAN */
+
+main #page-pembelian .body {
+  overflow-y: scroll;
+}
+
+main #page-pembelian .card-data-pembelian {
+  background-color: var(--color-white);
+  padding: 15px 20px;
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+  border-radius: 5px;
+  height: 100%;
+}
+
+main #page-pembelian .card-data-pembelian h1 {
+  border-bottom: 1px solid var(--color-gray-dark);
+  margin-bottom: 20px;
+}
+
+main #page-pembelian .card-data-pembelian table td img {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main #page-pembelian .card-data-pembelian table td .nama-barang {
+  width: 200px;
+  text-align: center;
+}
+
+main #page-pembelian .card-data-pembelian table td .jumlah {
+  width: 10px;
+  text-align: center;
+}
+
+main #page-pembelian .card-data-pembelian table td .harga,
+main #page-pembelian .card-data-pembelian table td .total-harga {
+  width: 80px;
+  text-align: center;
+}
+
+main #page-pembelian .card-data-pembelian table td .ubah-hapus {
+  display: flex;
+  column-gap: 10px;
+}
+
+main #page-pembelian .card-data-pembelian table td .ubah-hapus a {
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 10px;
+  /* border: 1px solid black; */
+}
+
+main #page-pembelian .card-data-pembelian table td .ubah-hapus a:hover {
+  transform: scale(1.05);
+}
+
+main #page-pembelian .card-data-pembelian table td .ubah-hapus a[alt="ubah"] {
+  border: 1px solid blue;
+  color: blue;
+}
+
+main
+  #page-pembelian
+  .card-data-pembelian
+  table
+  td
+  .ubah-hapus
+  a[alt="ubah"]:hover {
+  background-color: blue;
+  color: white;
+}
+
+main #page-pembelian .card-data-pembelian table td .ubah-hapus a[alt="hapus"] {
+  border: 1px solid orange;
+  color: orange;
+}
+
+main
+  #page-pembelian
+  .card-data-pembelian
+  table
+  td
+  .ubah-hapus
+  a[alt="hapus"]:hover {
+  background-color: orange;
+  color: white;
+}
+
+/* HALAMAN RIWAYAT TRANSAKSI */
+
+main #page-riwayat-transaksi .body {
+  overflow-y: scroll;
+}
+
+main #page-riwayat-transaksi .card-riwayat-transaksi {
+  background-color: var(--color-white);
+  padding: 15px 20px;
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+  border-radius: 5px;
+  height: 100%;
+}
+
+main #page-riwayat-transaksi .card-riwayat-transaksi h1 {
+  border-bottom: 1px solid var(--color-gray-dark);
+  margin-bottom: 20px;
+}
+
+main #page-riwayat-transaksi .card-riwayat-transaksi table td img {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main #page-riwayat-transaksi .card-riwayat-transaksi table td .nama-barang {
+  width: 200px;
+  text-align: center;
+}
+
+main #page-riwayat-transaksi .card-riwayat-transaksi table td .jumlah {
+  width: 10px;
+  text-align: center;
+}
+
+main #page-riwayat-transaksi .card-riwayat-transaksi table td .harga,
+main #page-riwayat-transaksi .card-riwayat-transaksi table td .total-harga {
+  width: 80px;
+  text-align: center;
+}
+
+/* HALAMAN CEK HARGA */
+
+main #page-cek-harga .card-cek-harga {
+  background-color: var(--color-white);
+  padding: 15px 20px;
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
+main #page-cek-harga .card-cek-harga form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 200px;
+  justify-content: center;
+}
+
+main #page-cek-harga .card-cek-harga input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray-light);
+}
+
+main #page-cek-harga .card-cek-harga input:focus {
+  outline: none;
+}
+
+main #page-cek-harga .card-cek-harga button {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+}
+
+main #page-cek-harga .card-cek-harga button:hover {
+  transform: scale(1.05);
+}
+
+/* FITUR PROFILE */
+#profile {
+  background-color: var(--color-light);
+  position: absolute;
+  height: 70px;
+  width: 150px;
+  right: 20px;
+  top: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px var(--box-shadow-black);
+  padding: 5px;
+  color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+#profile .icon {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
+}
+
+#profile .icon .icon-close {
+  padding: 2px 4px;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+}
+
+#profile .icon .icon-close:hover {
+  background-color: aqua;
+  transform: scale(1.05);
+}
+
+#profile .icon .icon-close:hover i {
+  color: white;
+  transform: scale(1.05);
+}
+
+/* #profile .border-icon {
+  background-color: var(--color-white);
+  display: flex;
+  width: 130px;
+  column-gap: 10px;
+  border-radius: 50px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+#profile .border-icon:hover {
+  background-color: var(--color-gray-dark);
+  transform: scale(1.05);
+} */
+
+#profile button[name="logout"] {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  display: flex;
+  width: 130px;
+  column-gap: 10px;
+  border-radius: 50px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 10px;
+}
+
+#profile button[name="logout"]:hover {
+  background-color: var(--color-gray-dark);
+  transform: scale(1.05);
+}
+
+/* --- RESPONSIVE LAYOUT --- */
+
+@media screen and (max-width: 500px) {
+  .container {
+    grid-template-areas:
+      "navbar navbar navbar"
+      "main main main"
+      "footer footer footer";
+    /* transform: translateX(calc(30vw - 30vw));
+      transition: 300ms; */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container .sidebar .item li,
+  .container.active .sidebar .item li {
+    display: none;
+  }
+
+  .container .sidebar {
+    /* display: none; */
+    position: absolute;
+    top: calc(0vh + 10vh);
+    width: calc(0vw + 30vw);
+    transform: translateX(calc(30vw - 60vw));
+  }
+
+  .container.active .sidebar {
+    /* posisi awal + jarak = posisi akhir */
+    transform: translateX(calc(-30vw + 30vw));
+  }
+
+  .sidebar ul .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav {
+    width: 100vw;
+  }
+
+  main {
+    width: 100vw;
+  }
+}

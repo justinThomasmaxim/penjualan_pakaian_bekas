@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+body,
+.container {
+  overflow: hidden;
+}
+
+.container {
+  border: 1px solid black;
+  padding: 40px;
+  width: 500px;
+  height: 540px;
+  border-radius: 20px;
+  border: 10px solid white;
+  box-shadow: 10px 10px 5px rgb(31, 31, 31);
+  color: white;
+}
+
+.container:hover {
+  border: 10px solid skyblue;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  row-gap: 10px;
+}
+
+form input,
+form button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1px solid grey;
+}
+
+input[type="button"] {
+  color: white;
+  background-color: black;
+  width: 60px;
+  padding: 5px 10px;
+  margin-left: 340px;
+}
+
+.button-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button[name="submit"] {
+  background-color: green;
+  color: white;
+  width: 140px;
+}
+
+button[name="submit"]:hover {
+  transform: scale(1.05);
+}
+
+.error-username,
+.error-password {
+  color: red;
+}

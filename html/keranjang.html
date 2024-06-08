@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keranjang</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- FILE CSS -->
+    <link rel="stylesheet" href="styles/keranjang.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>Keranjang</h1>
+        <h3>
+            <a href="index.html">
+                Beranda
+            </a> /
+            <span>
+                Keranjang
+            </span>
+        </h3>
+    </div>
+
+    <main>
+        <div class="header-table">
+            <h1 class="barang">Barang</h1>
+            <h1 class="jumlah">Jumlah</h1>
+            <h1 class="harga">Harga</h1>
+            <h1 class="aksi">Aksi</h1>
+        </div>
+        <div class="body-table">
+            <div class="body">
+                <div class="image-barang barang">
+                    <input type="checkbox" name="checkbox-barang" value="">
+                    <img src="images/blue_wash_jeans.png">
+                    <p>Blue Wash Jeans</p>
+                </div>
+                <div class="vertikal">
+                    <p class="jumlah">1</p>
+                </div>
+                <div class="vertikal">
+                    <p class="harga">Rp. 320.000</p>
+                </div>
+                <div class="update-delete-barang">
+                    <form action="">
+                        <button name="ubah">Ubah</button>
+                    </form>
+                    <form action="">
+                        <button name="hapus">Hapus</button>
+                    </form>
+                </div>
+            </div>        
+            
+        </div>
+        <div class="button-pembelian">
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

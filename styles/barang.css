@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-light: #f0eff5;
+  --color-gray-light: #86848c;
+  --color-gray-dark: #56555e;
+  --color-black: #27282f;
+  --box-shadow-black: rgba(0, 0, 0, 0.1);
+  --box-shadow-white: rgba(255, 255, 255, 0.1);
+
+  --color-gray-light--white: #f0eff5;
+  --color-black--gray-dark: #27282f;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* overflow-x: hidden; */
+}
+
+a {
+  color: black;
+}
+
+/* input, 
+button {
+  outline: none;
+  border: none;
+} */
+
+.container {
+  height: 110vh;
+  padding: 100px 160px 160px 160px;
+  background-color: var(--color-light);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  height: 500px;
+  width: 1200px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 10px 15px;
+  /* margin-bottom: 100px; */
+  /* border: 1px solid blue; */
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+}
+
+.card .icon-back {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+a[href="index.php"] i {
+  display: flex;
+  align-items: center;
+}
+
+a[href="index.php"] i,
+a[href="index.php"] h2 {
+  font-size: 20px;
+}
+
+.card img {
+  width: 430px;
+}
+
+.card .img-deskripsi {
+  display: flex;
+}
+
+.card .information {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.card .information h1 {
+  font-size: 3rem;
+}
+
+.card .information p {
+  font-size: 1.4rem;
+}
+
+.card .information .terjual-harga {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .information input {
+  width: 100px;
+}
+
+.card .information .button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .information .button button {
+  background-color: var(--color-white);
+  border: 2px solid orange;
+  padding: 10px;
+  border-radius: 10px;
+  color: orange;
+}
+
+.card .information .button button:hover {
+  background-color: orange;
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+.card .information .button button[class="pembelian"] {
+  border: 2px solid blue;
+  background-color: blue;
+  color: var(--color-white);
+}
+
+.card .information .button button[class="pembelian"]:hover {
+  background-color: var(--color-white);
+  color: blue;
+}
+
+input[type="number"] {
+  padding: 5px 10px;
+}

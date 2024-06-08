@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThriftShopTZM</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <!-- FILE CSS -->
+    <link rel="stylesheet" href="styles/dataTables.css">
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="header">
+                <h1>ThriftShop<span>TZM</span></h1>
+            </div>
+            <div class="nav-right">
+                <div class="icon">
+                    <i class="fa-solid fa-bars" id="bar-menu"></i>
+                    <a href="keranjang.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+                <div class="button-dark-theme">
+                    <i class="fa-solid fa-sun light"></i>
+                    <i class="fa-solid fa-moon dark"></i>
+                </div>
+                <div class="profile">
+                    <i class="fa-solid fa-user"></i>
+                    <h1>admin</h1>
+                </div>
+            </div>
+        </nav>
+
+        <!-- END NAVBAR -->
+        <div class="sidebar">
+            <ul>
+
+                <!-- <a href="index.html?page=page_barang" class="item">
+                    <i class="fa-solid fa-business-time"></i>
+                    <li>Barang</li>
+                </a>
+                <a href="index.html?page=page_pembelian" class="item">
+                    <i class="fa-solid fa-cash-register"></i>
+                    <li>Pembelian</li>
+                </a>
+                <a href="index.html?page=page_cek_harga" class="item">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <li>Cek Harga</li>
+                </a> -->
+                <div class="item active" onclick="setPageBarang()">
+                    <i class="fa-solid fa-business-time"></i>
+                    <li>Barang</li>
+                </div>
+                <div class="item" onclick="setPagePembelian()">
+                    <i class="fa-solid fa-cash-register"></i>
+                    <li>Pembelian</li>
+                </div>
+                <div class="item" onclick="setPageCekHarga()">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <li>Cek Harga</li>
+                </div>
+            </ul>
+        </div>
+        <!-- END SIDEBAR -->
+        <main>
+            <!-- HALAMAN BARANG -->
+            <div id="page-barang">
+                <div class="header">
+                    <h1>Barang </h1>
+                </div>
+                <div class="cards-category">
+                    <h3>Kategori</h3>
+                    <div class="kategori">
+                        <div class="img" onclick="sendDataMerk('acer')">
+                            <p>Jeans</p>
+                        </div>
+                        <div class="img" onclick="sendDataMerk('acer')">
+                            <p>Cargo</p>
+                        </div>
+                        <div class="img" onclick="sendDataMerk('acer')">
+                            <p>Long Pants</p>
+                        </div>
+                        <div class="img" onclick="sendDataMerk('acer')">
+                            <p>Shorts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="barang">
+                    <div class="card">
+                        <a href="barang.html">
+                            <img src="images/blue_wash_jeans.png">
+                            <div class="information">
+                                <p>Blue Wash Jeans</p>
+                                <div class="harga-terjual">
+                                    <h4>Rp. 320.000</h3>
+                                        <h6>300 Terjual</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="barang.html">
+                            <img src="images/blue_wash_jeans.png">
+                            <div class="information">
+                                <p>Blue Wash Jeans</p>
+                                <div class="harga-terjual">
+                                    <h4>Rp. 320.000</h3>
+                                        <h6>300 Terjual</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="barang.html">
+                            <img src="images/blue_wash_jeans.png">
+                            <div class="information">
+                                <p>Blue Wash Jeans</p>
+                                <div class="harga-terjual">
+                                    <h4>Rp. 320.000</h3>
+                                        <h6>300 Terjual</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="barang.html">
+                            <img src="images/blue_wash_jeans.png">
+                            <div class="information">
+                                <p>Blue Wash Jeans</p>
+                                <div class="harga-terjual">
+                                    <h4>Rp. 320.000</h3>
+                                        <h6>300 Terjual</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="barang.html">
+                            <img src="images/blue_wash_jeans.png">
+                            <div class="information">
+                                <p>Blue Wash Jeans</p>
+                                <div class="harga-terjual">
+                                    <h4>Rp. 320.000</h3>
+                                        <h6>300 Terjual</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="barang.html">
+                            <img src="images/blue_wash_jeans.png">
+                            <div class="information">
+                                <p>Blue Wash Jeans</p>
+                                <div class="harga-terjual">
+                                    <h4>Rp. 320.000</h3>
+                                        <h6>300 Terjual</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- HALAMAN PEMBELIAN -->
+            <div id="page-pembelian" style="display: none;">
+                <div class="header">
+                    <h1>Pembelian</h1>
+
+                    <div class="card-data-pembelian">
+                        <h1>Data Pembelian Barang</h1>
+                        <table id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Nama Barang</th>
+                                    <th>Harga</th>
+                                    <th>Jumlah</th>
+                                    <th>Total Harga</th>
+                                    <th>Total Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Blue Wash Jeans</td>
+                                    <td>Rp. 320.000</td>
+                                    <td>2</td>
+                                    <td>Rp. 640.000</td>
+                                    <td>Rp. 640.000</td>
+                                </tr>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- HALAMAN CEK HARGA -->
+            <div id="page-cek-harga" style="display: none;">
+                <div class="header">
+                    <h1>Cek Harga</h1>
+                    <div class="card-cek-harga">
+                        <form action="cek_harga.html">
+                            <input type="text" placeholder="ID Barang" >
+                            <input type="text" placeholder="Jumlah" >
+                            <button>Cek Harga</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- END MAIN -->
+    </div>
+    <!-- END CONTAINER -->
+
+    <!-- datatables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+    <!-- FILE JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // function sendDataMerk(data) {
+        //     // Anda bisa mengarahkan pengguna ke URL dengan data yang ingin dikirimkan
+
+        //     window.location.href = 'index.php?brand=' + data;
+
+        // }
+
+    </script>
+
+    <script>
+        
+        function setPageBarang() {
+            let pageBarang = document.getElementById('page-barang');
+            let pagePembelian = document.getElementById('page-pembelian');
+            let pageCekHarga = document.getElementById('page-cek-harga');
+
+            pageBarang.style.display = 'block';
+            pagePembelian.style.display = 'none';
+            pageCekHarga.style.display = 'none';
+
+        }
+
+        function setPagePembelian() {
+            let pageBarang = document.getElementById('page-barang');
+            let pagePembelian = document.getElementById('page-pembelian');
+            let pageCekHarga = document.getElementById('page-cek-harga');
+
+            pageBarang.style.display = 'none';
+            pagePembelian.style.display = 'block';
+            pageCekHarga.style.display = 'none';
+
+        }
+
+        function setPageCekHarga() {
+            let pageBarang = document.getElementById('page-barang');
+            let pagePembelian = document.getElementById('page-pembelian');
+            let pageCekHarga = document.getElementById('page-cek-harga');
+
+            pageBarang.style.display = 'none';
+            pagePembelian.style.display = 'none';
+            pageCekHarga.style.display = 'block';
+
+        }
+
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+        });
+    </script>
+
+</body>
+
+</html>

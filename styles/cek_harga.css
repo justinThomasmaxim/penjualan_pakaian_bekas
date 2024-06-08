@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-light: #f0eff5;
+  --color-gray-light: #86848c;
+  --color-gray-dark: #56555e;
+  --color-black: #27282f;
+  --box-shadow-black: rgba(0, 0, 0, 0.1);
+  --box-shadow-white: rgba(255, 255, 255, 0.1);
+
+  --color-gray-light--white: #f0eff5;
+  --color-black--gray-dark: #27282f;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* overflow-x: hidden; */
+}
+
+a {
+  color: black;
+}
+
+/* input, 
+button {
+  outline: none;
+  border: none;
+} */
+
+.container {
+  height: 110vh;
+  padding: 100px 160px 160px 160px;
+  background-color: var(--color-light);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  height: 300px;
+  width: 520px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 10px 15px;
+  /* margin-bottom: 100px; */
+  /* border: 1px solid blue; */
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+}
+
+.card .icon-back {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.card .infromation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  color: var(--color-white);
+}
+
+.card .infromation .kotak {
+  background-color: blue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.card .infromation .kotak h2 {
+  text-align: center;
+}

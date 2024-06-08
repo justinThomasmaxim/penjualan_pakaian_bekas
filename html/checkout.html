@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keranjang</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- FILE CSS -->
+    <link rel="stylesheet" href="../styles/checkout.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>Checkout</h1>
+        <h3>
+            <a href="index.html">
+                Beranda
+            </a> /
+            <a href="keranjang.html">
+                Keranjang
+            </a> /
+            <span>
+                Checkout
+            </span>
+        </h3>
+    </div>
+
+    <main>
+        <div class="card-alamat">
+            <h3>Alamat Pengiriman</h3>
+            <a href="#"><button id="btn-tambah-alamat">Tambahkan Alamat</button></a>
+        </div>
+        <div class="barang-pembelian">
+            <h3>Barang yang dibeli</h3>
+            <div class="header-table">
+                <h1 class="barang">Barang</h1>
+                <h1 class="harga">Harga</h1>
+                <h1 class="jumlah">Jumlah</h1>
+                <h1 class="total">Total</h1>
+            </div>
+            <div class="body-table">
+                <div class="body">
+                    <div class="image-barang barang">
+                        <img src="images/blue_wash_jeans.png">
+                        <p>Blue Wash Jeans</p>
+                    </div>
+                    <div class="vertikal">
+                        <p class="harga">Rp. 320.000</p>
+                    </div>
+                    <div class="vertikal">
+                        <p class="jumlah">1</p>
+                    </div>
+                    <div class="vertikal">
+                        <p class="total">Rp. 320.000</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="image-barang barang">
+                        <img src="images/blue_wash_jeans.png">
+                        <p>Blue Wash Jeans</p>
+                    </div>
+                    <div class="vertikal">
+                        <p class="harga">Rp. 320.000</p>
+                    </div>
+                    <div class="vertikal">
+                        <p class="jumlah">1</p>
+                    </div>
+                    <div class="vertikal">
+                        <p class="total">Rp. 320.000</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bayar">
+            <form action="pembayaran.html">
+                <p>Dengan melanjutkan, Saya setuju dengan Syarat & ketentuan yang berlaku</p>
+
+                <input type="hidden" name="total_pembayaran" value="1">
+                <button id="btn-bayar">Bayar</button>
+            </form>
+        </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

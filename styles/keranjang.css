@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-light: #f0eff5;
+  --color-gray-light: #86848c;
+  --color-gray-dark: #56555e;
+  --color-black: black;
+  --box-shadow-black: rgba(0, 0, 0, 0.1);
+  --box-shadow-white: rgba(255, 255, 255, 0.1);
+
+  --color-gray-light--white: #f0eff5;
+  --color-black--gray-dark: #27282f;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-light);
+
+  /* overflow-x: hidden; */
+}
+
+a {
+  color: var(--color-black);
+}
+
+.header {
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.header h1 {
+  font-size: 3.4rem;
+}
+
+.header a {
+  color: orange;
+}
+
+.header a:hover {
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+main {
+  display: flex;
+  /* background-color: blue; */
+  height: 86vh;
+  flex-direction: column;
+  padding: 50px 50px 100px 50px;
+  overflow-y: scroll;
+}
+
+main .header-table,
+main .body {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 1px 1px var(--box-shadow-black);
+}
+
+main .jumlah,
+main .harga,
+main .aksi {
+  width: 150px;
+}
+
+main .barang {
+  width: 300px;
+}
+
+main h1,
+main p {
+  text-align: center;
+}
+
+main .header-table,
+main .body {
+  margin-bottom: 10px;
+  background-color: var(--color-white);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+main .body .image-barang {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+}
+
+main .body img {
+  width: 60px;
+}
+
+.vertikal {
+  display: flex;
+  align-items: center;
+}
+
+.update-delete-barang {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  margin-right: 5px;
+}
+
+.update-delete-barang .border {
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.update-delete-barang .border.ubah {
+  border: 1px solid blue;
+  color: blue;
+}
+
+.update-delete-barang .border.ubah:hover,
+.update-delete-barang .border.ubah:hover a{
+  color: white;
+  background-color: blue;
+  transform: scale(1.05);
+}
+
+.update-delete-barang .border.ubah a {
+  color: blue;
+}
+
+
+.update-delete-barang .border.hapus {
+  border: 1px solid orange;
+  color: orange;
+}
+
+.update-delete-barang .border.hapus:hover,
+.update-delete-barang .border.hapus:hover a {
+  color: white;
+  background-color: orange;
+  transform: scale(1.05);
+}
+
+.update-delete-barang .border.hapus a {
+  color: orange;
+}
+
+
+/* .update-delete-barang {
+  display: flex;
+  align-items: center;
+}
+
+.update-delete-barang form {
+  width: 73px;
+  display: flex;
+  justify-content: center;
+}
+
+.update-delete-barang form button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--color-white);
+}
+
+.update-delete-barang form button[name="ubah"] {
+  border: 1px solid blue;
+  color: blue;
+}
+
+.update-delete-barang form button[name="ubah"]:hover {
+  color: white;
+  background-color: blue;
+  transform: scale(1.04);
+}
+
+.update-delete-barang form button[name="hapus"] {
+  border: 1px solid orange;
+  color: orange;
+}
+
+.update-delete-barang form button[name="hapus"]:hover {
+  color: white;
+  background-color: orange;
+  transform: scale(1.04);
+} */
+
+.button-pembelian {
+  background-color: var(--color-white);
+  padding: 15px 20px;
+  text-align: right;
+  position: fixed;
+  z-index: 9999;
+  bottom: 20px;
+  width: calc(100% - 100px);
+  border-radius: 10px;
+}
+
+/* .button-pembelian a {
+  border: 1px solid red;
+  color: red;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.button-pembelian a:hover {
+  color: white;
+  background-color: red;
+} */
+
+.button-pembelian button {
+  border: 1px solid red;
+  color: red;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.button-pembelian button:hover {
+  color: white;
+  background-color: red;
+}
